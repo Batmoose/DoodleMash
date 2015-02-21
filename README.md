@@ -6,7 +6,7 @@ API usage
 
 The path notation `/some/path` assumes a domain (and port number for testing purposes). The full URL should resemble `<hostname>:<port>/some/path`. Anything in `<>` is to be replaced with the appropriate data upon implementation. Query strings are strings in the format `?key=value&anotherkey=anothervalue`. These inform the server of data you would like to send.
 
-##`/:udid<string>/photo_frags`
+##/:udid<string>/photo_frags
 ###Request - Method: POST
 Adds a fragment or set of fragments to be queued for drawing. The fragment should be the raw bytes of the picture.
 ####Headers
@@ -22,7 +22,7 @@ This metadata will be associated with the fragment permanently. When a doodle is
 `500` for a failure to write to the queue of photo_frags  
 `400` for a malformed request
 
-##`/:udid<string>/doodle_frags`
+##/:udid<string>/doodle_frags
 ###Request - Method: GET
 ####Headers
 `accept: application/json`  
@@ -62,7 +62,7 @@ The returned JSON object contains references to a set of doodle fragments. When 
 `403` for nothing to return  
 `500` for a misc server error  
 
-##`/:udid<string>/doodle_frags/<some id string>`
+##/:udid<string>/doodle_frags/<some id string>
 ###Request - Method: GET
 Gets a doodle fragment.
 ####Headers
@@ -83,7 +83,7 @@ The whole doodle fragment is sent if success
 `401` For invalid token, not authorized to access doodle fragment  
 `404` For doodle doesn't exist  
 
-##`/:udid<something>/doodle_frags/revive_cluster/<previous cluster id>`
+##/:udid<something>/doodle_frags/revive_cluster/<previous cluster id>
 ###Request - Method: POST
 "Revives" a cluster of "closed" doodle fragments such that it re-appears in server response to `/:udid<string>/doodle_frags`.
 ####Response
@@ -108,7 +108,7 @@ Gets the reference to a random photo fragment to be drawn
     }
     
 Issue a get request to the returned path to receive the raw photo. Save the token to be submitted with the doodle as well. Details below.
-##`/photo_frags/<some photo frag id>`
+##/photo_frags/<some photo frag id>
 ###Request - Method: GET
 ####Headers
 `accept: application/octet-stream`
@@ -120,7 +120,7 @@ Issue a get request to the returned path to receive the raw photo. Save the toke
 `content-length: <length of image fragment in bytes>`  
 #####Body
 The raw contents of the photo fragment.
-##`/doodle_frags/<some doodle frag id>`
+##/doodle_frags/<some doodle frag id>
 ###Request - Method: POST
 ####Headers
 `content-type: application/octet-stream`  
