@@ -57,10 +57,10 @@ Gets references to all pending doodles for the user, with metadata, and access t
 
 The returned JSON object contains references to a set of doodle fragments. When doodle fragment is downloaded, the server registers that it has been requested. Once all fragments are requested from a cluster, the cluster of fragments will "close," meaning that any future requests for doodle fragments will not longer include that cluster. If the client would like to "revive" a closed cluster, issue a POST request to `/:udid<something>/doodle_frags/revive_cluster/<previous cluster id>` This is detailed later.
 #####Status Codes
-`200` for having active clusters and returning them
-`400` for a malformed request
-`403` for nothing to return
-`500` for a misc server error
+`200` for having active clusters and returning them  
+`400` for a malformed request  
+`403` for nothing to return  
+`500` for a misc server error  
 
 ##`/:udid<string>/doodle_frags/<some id string>`
 ###Request - Method: GET
