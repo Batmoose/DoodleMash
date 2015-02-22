@@ -6,7 +6,7 @@ API usage
 
 The path notation `/some/path` assumes a domain (and port number for testing purposes). The full URL should resemble `<hostname>:<port>/some/path`. Anything in `<>` is to be replaced with the appropriate data upon implementation. Query strings are strings in the format `?key=value&anotherkey=anothervalue`. These inform the server of data you would like to send.
 
-##/:udid\<string\>/photo_frags
+##/:\<udid\>/photo_frags
 ###Request - Method: POST
 Adds a fragment or set of fragments to be queued for drawing. The fragment should be the raw bytes of the picture.
 ####Headers
@@ -22,7 +22,7 @@ This metadata will be associated with the fragment permanently. When a doodle is
 `500` for a failure to write to the queue of photo_frags  
 `400` for a malformed request
 
-##/:udid\<string\>/doodle_frags
+##/:\<udid\>/doodle_frags
 ###Request - Method: GET
 ####Headers
 `accept: application/json`  
@@ -55,14 +55,14 @@ Gets references to all pending doodles for the user, with metadata, and access t
       ...
     ]
 
-The returned JSON object contains references to a set of doodle fragments. When doodle fragment is downloaded, the server registers that it has been requested. Once all fragments are requested from a cluster, the cluster of fragments will "close," meaning that any future requests for doodle fragments will not longer include that cluster. If the client would like to "revive" a closed cluster, issue a POST request to `/:udid<something>/doodle_frags/revive_cluster/<previous cluster id>` This is detailed later.
+The returned JSON object contains references to a set of doodle fragments. When doodle fragment is downloaded, the server registers that it has been requested. Once all fragments are requested from a cluster, the cluster of fragments will "close," meaning that any future requests for doodle fragments will not longer include that cluster. If the client would like to "revive" a closed cluster, issue a POST request to `/<udid>/doodle_frags/revive_cluster/<previous cluster id>` This is detailed later.
 #####Status Codes
 `200` for having active clusters and returning them  
 `400` for a malformed request  
 `403` for nothing to return  
 `500` for a misc server error  
 
-##/:udid\<string\>/doodle_frags/\<some id string\>
+##/:\<udid\>/doodle_frags/\<some id string\>
 ###Request - Method: GET
 Gets a doodle fragment.
 ####Headers
