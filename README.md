@@ -22,7 +22,7 @@ This metadata will be associated with the fragment permanently. When a doodle is
 `500` for a failure to write to the queue of photo_frags  
 `400` for a malformed request
 
-##/:udid<string>/doodle_frags
+##/:udid\<string\>/doodle_frags
 ###Request - Method: GET
 ####Headers
 `accept: application/json`  
