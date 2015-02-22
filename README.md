@@ -90,7 +90,7 @@ The whole doodle fragment is sent if success
 #####Status Codes
 `200` For a successful operation  
 `404` For a non-existent or no longer valid cluster id  
-##`/photo_frags/`
+##/photo_frags/
 ###Request - Method: GET
 Gets the reference to a random photo fragment to be drawn
 ####Headers
