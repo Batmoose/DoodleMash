@@ -22,7 +22,7 @@ This metadata will be associated with the fragment permanently. When a doodle is
 `500` for a failure to write to the queue of photo_frags  
 `400` for a malformed request
 
-##/:\<udid\>/doodle_frags
+##/\<udid\>/doodle_frags
 ###Request - Method: GET
 ####Headers
 `accept: application/json`  
@@ -62,7 +62,7 @@ The returned JSON object contains references to a set of doodle fragments. When 
 `403` for nothing to return  
 `500` for a misc server error  
 
-##/:\<udid\>/doodle_frags/\<some id string\>
+##/\<udid\>/doodle_frags/\<some id string\>
 ###Request - Method: GET
 Gets a doodle fragment.
 ####Headers
