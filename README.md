@@ -6,7 +6,7 @@ API usage
 
 The path notation `/some/path` assumes a domain (and port number for testing purposes). The full URL should resemble `<hostname>:<port>/some/path`. Anything in `<>` is to be replaced with the appropriate data upon implementation. Query strings are strings in the format `?key=value&anotherkey=anothervalue`. These inform the server of data you would like to send.
 
-##/:\<udid\>/photo_frags
+##/\<udid\>/photo_frags
 ###Request - Method: POST
 Adds a fragment or set of fragments to be queued for drawing. The fragment should be the raw bytes of the picture.
 ####Headers
