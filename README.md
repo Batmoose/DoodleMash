@@ -83,7 +83,7 @@ The whole doodle fragment is sent if success
 `401` For invalid token, not authorized to access doodle fragment  
 `404` For doodle doesn't exist  
 
-##/:udid\<something\>/doodle_frags/revive_cluster/\<previous cluster id\>
+##/\<udid\>/doodle_frags/revive_cluster/\<previous cluster id\>
 ###Request - Method: POST
 "Revives" a cluster of "closed" doodle fragments such that it re-appears in server response to `/:udid<string>/doodle_frags`.
 ####Response
